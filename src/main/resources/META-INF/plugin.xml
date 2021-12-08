@@ -1,0 +1,14 @@
+<consulo-plugin>
+	<id>consulo.fontviewer</id>
+	<name>Font Viewer</name>
+	<version>SNAPSHOT</version>
+	<description>TTF&amp;OTF font viewer</description>
+	<tags>
+		<tag>editor.extension</tag>
+	</tags>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<fileEditorProvider implementation="com.android.tools.idea.editors.fonts.FontEditorProvider"/>
+		<fileTypeFactory implementation="consulo.fontviewer.FontTypeFactory"/>
+	</extensions>
+</consulo-plugin>

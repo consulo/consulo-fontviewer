@@ -1,0 +1,3 @@
+Contains code from Android plugin for IDEA
+
+https://github.com/jetbrains/android
