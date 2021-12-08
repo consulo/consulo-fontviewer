@@ -1,4 +1,4 @@
-<consulo-plugin>
+<consulo-plugin url="https://github.com/consulo/consulo-fontviewer">
 	<id>consulo.fontviewer</id>
 	<name>Font Viewer</name>
 	<version>SNAPSHOT</version>
