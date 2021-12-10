@@ -17,6 +17,7 @@ package com.android.tools.idea.fileTypes;
 
 import com.intellij.openapi.fileTypes.FileType;
 import consulo.fontviewer.icon.FontViewerIconGroup;
+import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -40,9 +41,9 @@ public class FontFileType implements FileType
 
 	@NotNull
 	@Override
-	public String getDescription()
+	public LocalizeValue getDescription()
 	{
-		return "Font";
+		return LocalizeValue.localizeTODO("Font");
 	}
 
 	@NotNull
