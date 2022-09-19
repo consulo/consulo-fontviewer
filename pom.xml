@@ -29,6 +29,17 @@
 	<version>3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<repositories>
+		<repository>
+			<id>consulo</id>
+			<url>https://maven.consulo.io/repository/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>interval:60</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<modules>
 		<module>api</module>
 		<module>desktop-awt-impl</module>
