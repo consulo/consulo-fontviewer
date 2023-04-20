@@ -15,8 +15,8 @@
  */
 package consulo.fontviewer;
 
-import consulo.fontviewer.icon.FontViewerIconGroup;
 import consulo.localize.LocalizeValue;
+import consulo.platform.base.icon.PlatformIconGroup;
 import consulo.ui.image.Image;
 import consulo.virtualFileSystem.fileType.FileType;
 
@@ -58,7 +58,7 @@ public class FontFileType implements FileType
 	@Override
 	public Image getIcon()
 	{
-		return FontViewerIconGroup.font_file();
+		return PlatformIconGroup.filetypesFont();
 	}
 
 	@Override
