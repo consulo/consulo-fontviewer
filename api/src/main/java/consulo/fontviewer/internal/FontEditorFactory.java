@@ -23,7 +23,7 @@ import consulo.fontviewer.FontFileType;
 import consulo.project.Project;
 import consulo.virtualFileSystem.VirtualFile;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * Factory for each platform, while there no cross-platform implementation
