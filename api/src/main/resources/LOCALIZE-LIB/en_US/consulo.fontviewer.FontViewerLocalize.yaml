@@ -1,0 +1,16 @@
+font.file.type.description:
+    text: Font
+font.editor.name:
+    text: Font
+font.loading.text:
+    text: Loading font...
+font.cannot.open:
+    text: Unable to open font {0}
+font.no.displayable.glyphs:
+    text: This font does not contain any glyphs that can be previewed
+font.zoom.in:
+    text: Zoom In
+font.zoom.out:
+    text: Zoom Out
+font.zoom.actual.size:
+    text: Actual Size
