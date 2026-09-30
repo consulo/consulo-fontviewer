@@ -21,18 +21,14 @@ import consulo.fontviewer.FontFileType;
 import consulo.virtualFileSystem.fileType.FileTypeConsumer;
 import consulo.virtualFileSystem.fileType.FileTypeFactory;
 
-import jakarta.annotation.Nonnull;
-
 /**
  * @author VISTALL
  * @since 08/12/2021
  */
 @ExtensionImpl
-public class FontTypeFactory extends FileTypeFactory
-{
-	@Override
-	public void createFileTypes(@Nonnull FileTypeConsumer fileTypeConsumer)
-	{
-		fileTypeConsumer.consume(FontFileType.INSTANCE, "otf;ttf;woff");
-	}
+public class FontTypeFactory extends FileTypeFactory {
+    @Override
+    public void createFileTypes(FileTypeConsumer fileTypeConsumer) {
+        fileTypeConsumer.consume(FontFileType.INSTANCE, "otf;ttf;woff;woff2");
+    }
 }

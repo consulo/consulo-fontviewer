@@ -2,9 +2,8 @@
 	<id>consulo.fontviewer</id>
 	<name>Font Viewer</name>
 	<version>SNAPSHOT</version>
-	<description>TTF&amp;OTF font viewer</description>
+	<description>TTF, OTF and WOFF font viewer</description>
 	<tags>
 		<tag>editor.extension</tag>
 	</tags>
-	<depends optional="true">consulo.desktop.awt</depends>
 </consulo-plugin>

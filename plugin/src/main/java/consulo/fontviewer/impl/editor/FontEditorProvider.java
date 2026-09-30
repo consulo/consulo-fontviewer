@@ -17,74 +17,39 @@
 package consulo.fontviewer.impl.editor;
 
 import consulo.annotation.component.ExtensionImpl;
-import consulo.application.Application;
 import consulo.application.dumb.DumbAware;
 import consulo.fileEditor.FileEditor;
 import consulo.fileEditor.FileEditorPolicy;
 import consulo.fileEditor.FileEditorProvider;
-import consulo.fontviewer.internal.FontEditorFactory;
+import consulo.fontviewer.FontFileType;
 import consulo.project.Project;
 import consulo.ui.annotation.RequiredUIAccess;
 import consulo.virtualFileSystem.VirtualFile;
-import jakarta.inject.Inject;
-
-import jakarta.annotation.Nonnull;
 
 @ExtensionImpl
-public class FontEditorProvider implements FileEditorProvider, DumbAware
-{
-	private static final String ID = "fontseditor";
+public class FontEditorProvider implements FileEditorProvider, DumbAware {
+    private static final String ID = "fontseditor";
 
-	private static final String LOREM_TEXT = new LoremGenerator().generate(50, true);
+    private static final String LOREM_TEXT = new LoremGenerator().generate(50, true);
 
-	private final Application myApplication;
+    @Override
+    public boolean accept(Project project, VirtualFile file) {
+        return file.getFileType() == FontFileType.INSTANCE;
+    }
 
-	@Inject
-	public FontEditorProvider(Application application)
-	{
-		myApplication = application;
-	}
+    @RequiredUIAccess
+    @Override
+    public FileEditor createEditor(Project project, VirtualFile file) {
+        return new FontEditor(project, file, LOREM_TEXT);
+    }
 
-	@Override
-	public boolean accept(@Nonnull Project project, @Nonnull VirtualFile file)
-	{
-		for(FontEditorFactory factory : myApplication.getExtensionList(FontEditorFactory.class))
-		{
-			if(factory.accept(project, file))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
+    @Override
+    public String getEditorTypeId() {
+        return ID;
+    }
 
-	@RequiredUIAccess
-	@Nonnull
-	@Override
-	public FileEditor createEditor(@Nonnull Project project, @Nonnull VirtualFile file)
-	{
-		for(FontEditorFactory factory : myApplication.getExtensionList(FontEditorFactory.class))
-		{
-			if(factory.accept(project, file))
-			{
-				return factory.createEditor(project, file, LOREM_TEXT);
-			}
-		}
-
-		throw new UnsupportedOperationException("Can't find font editor implementation");
-	}
-
-	@Nonnull
-	@Override
-	public String getEditorTypeId()
-	{
-		return ID;
-	}
-
-	@Nonnull
-	@Override
-	public FileEditorPolicy getPolicy()
-	{
-		return FileEditorPolicy.PLACE_BEFORE_DEFAULT_EDITOR;
-	}
+    @Override
+    public FileEditorPolicy getPolicy() {
+        return FileEditorPolicy.PLACE_BEFORE_DEFAULT_EDITOR;
+    }
 }

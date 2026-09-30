@@ -82,11 +82,6 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>${pom.groupId}</groupId>
-			<artifactId>consulo.fontviewer.desktop.awt</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>consulo</groupId>
 			<artifactId>consulo-file-editor-api</artifactId>
 			<version>${project.version}</version>
@@ -125,6 +120,24 @@
 		<dependency>
 			<groupId>consulo</groupId>
 			<artifactId>consulo-util-lang</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-util-concurrent-coroutine</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-disposer-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-logging-api</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>

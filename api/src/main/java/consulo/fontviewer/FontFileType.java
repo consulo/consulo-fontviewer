@@ -15,55 +15,42 @@
  */
 package consulo.fontviewer;
 
+import consulo.fontviewer.localize.FontViewerLocalize;
 import consulo.localize.LocalizeValue;
 import consulo.platform.base.icon.PlatformIconGroup;
 import consulo.ui.image.Image;
 import consulo.virtualFileSystem.fileType.FileType;
 
-import jakarta.annotation.Nonnull;
+public class FontFileType implements FileType {
+    public static final FontFileType INSTANCE = new FontFileType();
 
-public class FontFileType implements FileType
-{
-	public static final FontFileType INSTANCE = new FontFileType();
+    private static final String TTF_EXTENSION = "ttf";
 
-	public static final String WOFF_EXTENSION = "woff";
-	private static final String TTF_EXTENSION = "ttf";
+    private FontFileType() {
+    }
 
-	private FontFileType()
-	{
-	}
+    @Override
+    public String getId() {
+        return "Font";
+    }
 
-	@Nonnull
-	@Override
-	public String getId()
-	{
-		return "Font";
-	}
+    @Override
+    public LocalizeValue getDescription() {
+        return FontViewerLocalize.fontFileTypeDescription();
+    }
 
-	@Nonnull
-	@Override
-	public LocalizeValue getDescription()
-	{
-		return LocalizeValue.localizeTODO("Font");
-	}
+    @Override
+    public String getDefaultExtension() {
+        return TTF_EXTENSION;
+    }
 
-	@Nonnull
-	@Override
-	public String getDefaultExtension()
-	{
-		return TTF_EXTENSION;
-	}
+    @Override
+    public Image getIcon() {
+        return PlatformIconGroup.filetypesFont();
+    }
 
-	@Nonnull
-	@Override
-	public Image getIcon()
-	{
-		return PlatformIconGroup.filetypesFont();
-	}
-
-	@Override
-	public boolean isBinary()
-	{
-		return true;
-	}
+    @Override
+    public boolean isBinary() {
+        return true;
+    }
 }
